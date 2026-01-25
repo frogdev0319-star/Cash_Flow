@@ -25,7 +25,7 @@ function getFetch() {
 }
 
 function buildFrontendUrl(pathname, query = {}) {
-    const url = new URL(`http://localhost:3000${pathname}`)
+    const url = new URL(`https://cash-flow-app.zeabur.app${pathname}`)
     for (const [key, value] of Object.entries(query)) {
         if (value === undefined || value === null) continue
         url.searchParams.set(key, String(value))
