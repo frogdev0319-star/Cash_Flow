@@ -83,7 +83,7 @@ app.post('/users', (req, res) => {
 app.post('/create-checkout-session', async (req, res) => {
     try {
         // const TOKENZ_TOKEN = process.env.TOKENZ_API_TOKEN
-        const TOKENZ_API_TOKEN = "secret_test_APK4QbbHMTSxLbRzpB6Mw51BvMdjr8BihzoH51ST9ss4XKHdfFGxuuFWxE6yRmBkRU63fecqmeXgtCvaq"
+        const TOKENZ_API_TOKEN = "secret_test_39JyLLmLrvxeKtdS8CNYQEhfvpWmxqc73t7gEDZtEtEASQoGR3VjT62e6mA6eTm6uRZx6S7KrcfxDind"
 
         if (!TOKENZ_TOKEN) {
             return res.status(500).json({
