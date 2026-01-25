@@ -11,7 +11,7 @@ const ENV_PATH = path.resolve(__dirname, '../.env')
 dotenv.config({ path: ENV_PATH })
 
 const app = express()
-const port = 3001
+const port = process.env.PORT || 3001
 
 const TOKENZ_API_URL = 'https://api.tokenz.one/v2'
 
