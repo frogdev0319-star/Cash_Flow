@@ -1,0 +1,26 @@
+{
+    "name": "tokenz",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview",
+        "server": "node server/index.js"
+    },
+    "dependencies": {
+        "vue": "^3.4.0",
+        "vue-router": "^4.2.5",
+        "express": "^4.18.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "better-sqlite3": "^11.7.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.0",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.0",
+        "vue-tsc": "^1.8.27"
+    }
+}
