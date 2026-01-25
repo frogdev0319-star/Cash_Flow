@@ -10,10 +10,19 @@ const __dirname = path.dirname(__filename)
 const ENV_PATH = path.resolve(__dirname, '../.env')
 dotenv.config({ path: ENV_PATH })
 
+
 const app = express()
 const port = process.env.PORT || 3001
 
 const TOKENZ_API_URL = 'https://api.tokenz.one/v2'
+
+
+// 提供前端靜態文件  
+app.use(express.static(path.join(__dirname, '../dist')))
+// 所有未匹配的路由都返回 index.html（用於 SPA 路由）  
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'))
+})
 
 app.use(cors())
 app.use(express.json())
