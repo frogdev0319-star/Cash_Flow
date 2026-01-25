@@ -44,8 +44,8 @@ import { setAuthUser } from '@/auth'
 
 const router = useRouter()
 
-const email = ref('aaa@aaa.com')
-const password = ref('0')
+const email = ref('')
+const password = ref('')
 const loading = ref(false)
 const errorMessage = ref('')
 
