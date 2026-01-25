@@ -58,7 +58,8 @@ const handlePayment = async () => {
 
   try {
     // 從後端創建 Checkout Session
-    const response = await fetch('http://localhost:3001/create-checkout-session', {
+    // const response = await fetch('http://localhost:3001/create-checkout-session', {
+    const response = await fetch(' https://cash-flow-app.zeabur.app/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
