@@ -82,7 +82,9 @@ app.post('/users', (req, res) => {
 // 創建 Tokenz Checkout Session
 app.post('/create-checkout-session', async (req, res) => {
     try {
-        const TOKENZ_TOKEN = process.env.TOKENZ_API_TOKEN
+        // const TOKENZ_TOKEN = process.env.TOKENZ_API_TOKEN
+        const TOKENZ_API_TOKEN = secret_test_39JyLLmLrvxeKtdS8CNYQEhfvpWmxqc73t7gEDZtEtEASQoGR3VjT62e6mA6eTm6uRZx6S7KrcfxDind
+
         if (!TOKENZ_TOKEN) {
             return res.status(500).json({
                 error: 'TOKENZ_API_TOKEN 未設定；請先將 .env.example 複製為 .env 並填入 Tokenz API Token'
