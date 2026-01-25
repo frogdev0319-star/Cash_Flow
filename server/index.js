@@ -328,7 +328,8 @@ app.get('/orders/:id', (req, res) => {
 
 app.post('/orders/:id/cancel', async (req, res) => {
     try {
-        const TOKENZ_TOKEN = process.env.TOKENZ_API_TOKEN
+        // const TOKENZ_TOKEN = process.env.TOKENZ_API_TOKEN
+        const TOKENZ_TOKEN = "secret_test_APK4QbbHMTSxLbRzpB6Mw51BvMdjr8BihzoH51ST9ss4XKHdfFGxuuFWxE6yRmBkRU63fecqmeXgtCvaq"
         if (!TOKENZ_TOKEN) {
             return res.status(500).json({ error: 'TOKENZ_API_TOKEN 未設定' })
         }
