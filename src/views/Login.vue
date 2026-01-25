@@ -13,7 +13,7 @@
           v-model="email"
           type="email"
           autocomplete="username"
-          placeholder="aaa@aaa.com"
+          placeholder=""
         />
       </div>
 
@@ -24,7 +24,7 @@
           v-model="password"
           type="password"
           autocomplete="current-password"
-          placeholder="0"
+          placeholder=""
           @keyup.enter="handleLogin"
         />
       </div>
