@@ -146,7 +146,7 @@ const fetchOrders = async () => {
   loading.value = true
   errorMessage.value = ''
   try {
-    const url = new URL('http://localhost:3001/orders')
+    const url = new URL('http://https://cash-flow-backend.zeabur.app/orders')
     url.searchParams.set('limit', '200')
     url.searchParams.set('mail', userEmail.value)
     const response = await fetch(url.toString())
@@ -197,7 +197,7 @@ const confirmCancel = async () => {
 const cancelOrder = async (id: string, reason: 'customer_cancellation' | 'duplicate_payment' | 'other', detail: string) => {
   cancelingId.value = id
   try {
-    const response = await fetch(`http://localhost:3001/orders/${encodeURIComponent(id)}/cancel`, {
+    const response = await fetch(`http://https://cash-flow-backend.zeabur.app/orders/${encodeURIComponent(id)}/cancel`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ mail: userEmail.value, reason, detail })
