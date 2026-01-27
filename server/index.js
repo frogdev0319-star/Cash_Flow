@@ -17,16 +17,14 @@ const port = process.env.PORT || 3001
 const TOKENZ_API_URL = 'https://api.tokenz.one/v2'
 
 
-// 提供前端靜態文件  
-app.use(express.static(path.join(__dirname, '../dist')))
-// 所有未匹配的路由都返回 index.html（用於 SPA 路由）  
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/index.html'))
-})
 
-app.use(cors())
+
+app.use(cors({
+    origin: ['https://cash-flow-web.zeabur.app', 'http://localhost:3000'],
+    credentials: true
+}))
+
 app.use(express.json())
-
 function getFetch() {
     const fetchFn = globalThis.fetch
     if (typeof fetchFn !== 'function') return null
@@ -34,13 +32,14 @@ function getFetch() {
 }
 
 function buildFrontendUrl(pathname, query = {}) {
-    const url = new URL(`https://cash-flow-app.zeabur.app${pathname}`)
+    const url = new URL(`https://cash-flow-web.zeabur.app${pathname}`)
     for (const [key, value] of Object.entries(query)) {
         if (value === undefined || value === null) continue
         url.searchParams.set(key, String(value))
     }
     return url.toString()
 }
+
 
 app.post('/login', (req, res) => {
     try {
@@ -87,7 +86,7 @@ app.post('/create-checkout-session', async (req, res) => {
 
         if (!TOKENZ_TOKEN) {
             return res.status(500).json({
-                error: 'TOKENZ_API_TOKEN 未設定；請先將 .env.example 複製為 .env 並填入 Tokenz API Token'
+                error: 'TOKENZ_TOKEN 未設定；請先將 .env.example 複製為 .env 並填入 Tokenz API Token'
             })
         }
 
