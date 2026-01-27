@@ -20,9 +20,9 @@ const TOKENZ_API_URL = 'https://api.tokenz.one/v2'
 
 
 app.use(cors({
-    origin: ['https://cash-flow-web.zeabur.app', 'http://localhost:3000'],
+    origin: 'https://cash-flow-web.zeabur.app',
     credentials: true
-}))
+}));
 
 app.use(express.json())
 function getFetch() {
