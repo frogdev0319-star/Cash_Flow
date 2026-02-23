@@ -53,9 +53,8 @@ const handleLogin = async () => {
   loading.value = true
   errorMessage.value = ''
 
-  
   try {
-    const response = await fetch('https://cash-flow-backend.zeabur.app/login', {
+    const response = await fetch('https://cash-flow-app.zeabur.app/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.value, password: password.value })
